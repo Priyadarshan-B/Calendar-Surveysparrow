@@ -6,7 +6,7 @@ import CalendarGrid from "./CalendarGrid";
 import defaultEvents from "../../data/events.json";
 import { useEvents } from "../utils/contexts/EventContext";
 
-export default function Calendar() {
+export default function CalendarMain() {
     const { events } = useEvents();
     const Events = events || defaultEvents;
   const [searchParams, setSearchParams] = useSearchParams();
