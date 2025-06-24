@@ -1,0 +1,107 @@
+[
+  {
+    "date": "2025-06-21",
+    "startTime": "09:00",
+    "endTime": "10:30",
+    "color": "#4CAF50",
+    "title": "Code Review"
+  },
+  {
+    "date": "2025-06-21",
+    "startTime": "09:30",
+    "endTime": "11:00",
+    "color": "#E91E63",
+    "title": "Design Sync"
+  },
+  {
+    "date": "2025-06-22",
+    "startTime": "14:00",
+    "endTime": "16:00",
+    "color": "#3F51B5",
+    "title": "UI Planning"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "color": "#FF9800",
+    "title": "Sprint Review"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "10:30",
+    "endTime": "11:30",
+    "color": "#9C27B0",
+    "title": "Backend Sync"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "08:00",
+    "endTime": "09:00",
+    "color": "#03A9F4",
+    "title": "Daily Standup"
+  },
+  {
+    "date": "2025-06-25",
+    "startTime": "13:00",
+    "endTime": "14:30",
+    "color": "#009688",
+    "title": "Client Meeting"
+  },
+  {
+    "date": "2025-06-25",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "color": "#673AB7",
+    "title": "Deployment Check"
+  },
+  {
+    "date": "2025-06-26",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#795548",
+    "title": "Bug Triage"
+  },
+  {
+    "date": "2025-06-27",
+    "startTime": "11:00",
+    "endTime": "12:30",
+    "color": "#F44336",
+    "title": "Team Retrospective"
+  },
+  {
+    "date": "2025-06-28",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "color": "#00BCD4",
+    "title": "Marketing Sync"
+  },
+  {
+    "date": "2025-06-28",
+    "startTime": "09:00",
+    "endTime": "10:30",
+    "color": "#FFC107",
+    "title": "Sales Alignment"
+  },
+  {
+    "date": "2025-06-29",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "color": "#CDDC39",
+    "title": "Infrastructure Review"
+  },
+  {
+    "date": "2025-06-30",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "color": "#607D8B",
+    "title": "Wrap-up Meeting"
+  },
+  {
+    "date": "2025-06-30",
+    "startTime": "10:30",
+    "endTime": "11:30",
+    "color": "#8BC34A",
+    "title": "Support Handoff"
+  }
+]

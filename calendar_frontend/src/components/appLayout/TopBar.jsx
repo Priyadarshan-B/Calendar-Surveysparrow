@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ThemeToggle from "./toggleTheme";
+import profile from '../../assets/user.png'
 
 function TopBar({ toggleSidebar, toggleSidebarCollapsed }) {
   const [open, setOpen] = useState(false);
   const user = {
     name: "Profile",
-    email: "profile@gmail.com",
-    image: "https://i.pravatar.cc/40?img=11",
+    image: profile,
   };
 
   return (

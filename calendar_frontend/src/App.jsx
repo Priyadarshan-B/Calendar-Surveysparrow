@@ -4,7 +4,7 @@ import Dashboard from "./pages/Dashboard/dashboard";
 import CalendarPage from "./pages/Calendar/Calendar";
 import CalendarDayPage from "./pages/Calendar/CalendarDayPage";
 import ToastMessage from "./components/toast/toast";
-import { ConfigProvider, theme } from "antd";
+import { EventProvider } from "./components/utils/contexts/EventContext";
 
 
 import "./App.css";
@@ -12,12 +12,8 @@ import "./App.css";
 function App() {
 
   return (
-    <ConfigProvider
-  theme={{
-    algorithm: theme.darkAlgorithm, // enables AntD dark mode
-  }}
->
-    <BrowserRouter>
+    <EventProvider>
+ <BrowserRouter>
       <ToastMessage />
       <Routes>
         <Route path="/" element={<AppLayout body={<Dashboard />} />} />
@@ -29,7 +25,7 @@ function App() {
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
     </BrowserRouter>
-    </ConfigProvider>
+    </EventProvider>
   );
 }
 

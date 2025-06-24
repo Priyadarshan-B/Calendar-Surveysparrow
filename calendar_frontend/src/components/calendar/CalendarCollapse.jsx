@@ -1,25 +1,25 @@
 import dayjs from "dayjs";
-import events from "../../data/events.json";
-import DatePicker from "../datePicker/CustomPicker";
 import CustomCalendar from "../datePicker/CustomCalendar";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "../appLayout/antdStyles.css";
 
-export default function CalendarView() {
+export default function CalendarView({events}) {
   const [searchParams, setSearchParams] = useSearchParams();
   const dateParam = searchParams.get("date");
   const selectedDate = dateParam ? dayjs(dateParam) : dayjs();
 
+  const [showPopup, setShowPopup] = useState(false);
+
   const updateDateParam = (date) => {
     setSearchParams({ date: date.format("YYYY-MM-DD") });
+    setShowPopup(false);
   };
 
-  const hours = Array.from({ length: 24 }, (_, i) =>
-    `${i.toString().padStart(2, "0")}:00`
+  const hours = Array.from(
+    { length: 24 },
+    (_, i) => `${i.toString().padStart(2, "0")}:00`
   );
-
- 
 
   const parseTime = (timeStr) => {
     const [hours, minutes] = timeStr.split(":").map(Number);
@@ -85,28 +85,31 @@ export default function CalendarView() {
   const EVENT_HORIZONTAL_GAP_PX = 4;
 
   return (
-    <div className="h-full overflow-y-auto flex border rounded shadow bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-      <div className="hidden md:block p-4 border-r dark:border-gray-700 overflow-y-auto">
-        <h2 className="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
-          My Calendars
-        </h2>
-        <div className="hidden md:block">
-         <CustomCalendar value={selectedDate} onChange={updateDateParam} />
+    <div className="h-full overflow-y-auto flex  rounded shadow bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 relative">
+      <div className="hidden md:block p-4  dark:border-gray-700 overflow-y-auto">
+        <div>
+          <CustomCalendar value={selectedDate} onChange={updateDateParam} />
         </div>
       </div>
 
       <div className="flex-1 flex flex-col overflow-y-auto">
-        <div className="flex items-center justify-between px-4 py-2 border-b dark:border-gray-700">
-          <div className="md:hidden">
-            <DatePicker  value={selectedDate} onChange={updateDateParam} />
+        <div className="flex items-center justify-between px-4 py-2  dark:border-gray-700">
+          <div className="md:hidden flex gap-2">
+            <button
+              onClick={() => setShowPopup(true)}
+              className="bg-blue-600 text-white px-3 py-1 rounded text-sm"
+            >
+              Show Calendar
+            </button>
           </div>
+
           <span className="font-semibold text-gray-600 dark:text-gray-300">
             {selectedDate.format("dddd, MMMM D, YYYY")}
           </span>
         </div>
 
-        <div className="flex flex-1 ">
-          <div className="w-20 bg-gray-100 dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 flex flex-col">
+        <div className="flex flex-1">
+          <div className="w-20 bg-gray-100 rounded dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 flex flex-col">
             {hours.map((hour) => (
               <div
                 key={hour}
@@ -117,7 +120,7 @@ export default function CalendarView() {
             ))}
           </div>
 
-          <div className="flex-1 relative border-l dark:border-gray-700">
+          <div className="flex-1 rounded relative  dark:border-gray-700">
             {hours.map((hour, index) => (
               <div
                 key={hour}
@@ -129,15 +132,13 @@ export default function CalendarView() {
             {processedDayEvents.map((event, i) => {
               const top = event.parsedStart * 48;
               const height = (event.parsedEnd - event.parsedStart) * 48;
-              const gapPercentage =
-                (EVENT_HORIZONTAL_GAP_PX /
-                  document.querySelector(".flex-1.relative.border-l")?.offsetWidth) *
-                  100 || 0;
-              const effectiveWidthPerColumn =
-                (100 - (event.totalColumns - 1) * gapPercentage) /
-                event.totalColumns;
-              const leftPosition =
-                event.columnIndex * (effectiveWidthPerColumn + gapPercentage);
+
+              const GAP_PX = 2;
+              const totalColumns = event.totalColumns || 1;
+              const gapTotal = GAP_PX * (totalColumns - 1);
+              const containerWidth = 100;
+              const widthPerEvent = (containerWidth - gapTotal) / totalColumns;
+              const left = (widthPerEvent + GAP_PX) * event.columnIndex;
 
               return (
                 <div
@@ -147,8 +148,8 @@ export default function CalendarView() {
                     top: `${top}px`,
                     height: `${height}px`,
                     backgroundColor: event.color || "#3B82F6",
-                    left: `${leftPosition}%`,
-                    width: `${effectiveWidthPerColumn}%`,
+                    left: `${left}%`,
+                    width: `${widthPerEvent}%`,
                     minHeight: "20px",
                     zIndex: 10 + event.columnIndex,
                   }}
@@ -165,6 +166,20 @@ export default function CalendarView() {
           </div>
         </div>
       </div>
+
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50 md:hidden">
+          <div className="bg-white dark:bg-gray-900 p-4 rounded shadow-lg max-w-sm w-full relative">
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-2 right-2 text-gray-700 dark:text-gray-300 text-lg"
+            >
+              ✕
+            </button>
+            <CustomCalendar value={selectedDate} onChange={updateDateParam} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

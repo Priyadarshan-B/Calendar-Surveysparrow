@@ -1,11 +1,14 @@
 import { useSearchParams } from "react-router-dom";
 import dayjs from "dayjs";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CalendarHeader from "./CalendarHeader";
 import CalendarGrid from "./CalendarGrid";
-import events from "../../data/events.json";
+import defaultEvents from "../../data/events.json";
+import { useEvents } from "../utils/contexts/EventContext";
 
 export default function Calendar() {
+    const { events } = useEvents();
+    const Events = events || defaultEvents;
   const [searchParams, setSearchParams] = useSearchParams();
   const initial = searchParams.get("date")
     ? dayjs(searchParams.get("date") + "-01")
@@ -32,7 +35,7 @@ export default function Calendar() {
         onPrev={handlePrev}
         onNext={handleNext}
       />
-      <CalendarGrid currentMonth={currentMonth} events={events} />
+      <CalendarGrid currentMonth={currentMonth} events={Events} />
     </div>
   );
 }
