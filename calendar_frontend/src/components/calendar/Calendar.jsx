@@ -11,7 +11,7 @@ export default function Calendar() {
   const handleNext = () => setCurrentMonth(currentMonth.add(1, "month"));
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4">
+    <div className="bg-white shadow-md  rounded-lg p-4">
       <CalendarHeader 
         currentMonth={currentMonth} 
         onPrev={handlePrev} 

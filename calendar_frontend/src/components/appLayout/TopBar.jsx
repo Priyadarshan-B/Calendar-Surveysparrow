@@ -64,16 +64,7 @@ function TopBar({ toggleSidebar, toggleSidebarCollapsed }) {
             <span className="hidden md:block text-sm font-medium">
               {user.name}
             </span>
-            <svg
-              className={`w-4 h-4 hidden md:block transition-transform duration-200 ${
-                open ? "rotate-180" : ""
-              } text-gray-700 dark:text-gray-300`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M19 9l-7 7-7-7" />
-            </svg>
+            
           </button>
         </div>
       </div>

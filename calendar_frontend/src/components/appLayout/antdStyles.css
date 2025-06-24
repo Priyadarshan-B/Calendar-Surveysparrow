@@ -1,0 +1,52 @@
+/* .ant-calendar-custom-dark.ant-picker {
+  @apply dark:bg-gray-800 dark:border-gray-700;
+}
+.ant-calendar-custom-dark .ant-picker-panel {
+  @apply dark:bg-gray-800 dark:text-gray-200;
+}
+.ant-calendar-custom-dark .ant-picker-header {
+  @apply dark:border-b dark:border-gray-700;
+}
+.ant-calendar-custom-dark .ant-picker-header-super-prev-btn,
+.ant-calendar-custom-dark .ant-picker-header-prev-btn,
+.ant-calendar-custom-dark .ant-picker-header-next-btn,
+.ant-calendar-custom-dark .ant-picker-header-super-next-btn,
+.ant-calendar-custom-dark .ant-picker-header-view > button {
+  @apply dark:text-gray-300 hover:dark:text-white;
+}
+.ant-calendar-custom-dark .ant-picker-cell-inner {
+  @apply dark:text-gray-200;
+}
+.ant-calendar-custom-dark .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-calendar-custom-dark .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner {
+  @apply dark:bg-blue-600 dark:text-white !important; 
+}
+.ant-calendar-custom-dark .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  @apply dark:border-blue-600 !important; 
+}
+.ant-calendar-custom-dark .ant-picker-cell-in-view.ant-picker-cell-disabled .ant-picker-cell-inner {
+  @apply dark:text-gray-500;
+}
+
+.ant-picker-custom-dark.ant-picker {
+  @apply dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200;
+}
+.ant-picker-custom-dark .ant-picker-input > input {
+  @apply dark:text-gray-200;
+}
+.ant-picker-custom-dark .ant-picker-suffix {
+  @apply dark:text-gray-400;
+}
+.ant-picker-custom-dark .ant-picker-clear {
+  @apply dark:text-gray-400 hover:dark:text-white;
+}
+
+.ant-picker-dropdown {
+  @apply dark:bg-gray-800 dark:text-gray-200;
+}
+.ant-picker-panel-container {
+  @apply dark:bg-gray-800 dark:text-gray-200;
+}
+.ant-picker-panel-container .ant-picker-panel {
+  @apply dark:bg-gray-800 dark:text-gray-200;
+} */

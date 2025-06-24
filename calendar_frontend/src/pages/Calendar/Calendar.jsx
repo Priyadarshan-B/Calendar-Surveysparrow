@@ -9,9 +9,8 @@ export default function CalendarPage() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="h-screen p-4">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">Calendar</h1>
         <button
           onClick={() => setCollapsed(!collapsed)}
           className="inline-flex items-center gap-2 px-3 py-1 border rounded bg-white hover:bg-gray-100 text-sm shadow"
