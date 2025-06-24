@@ -22,16 +22,16 @@ function SideBar({ open, toggleSidebar, collapsed, toggleCollapsed }) {
       ></div>
 
       <aside
-        className={`fixed z-50 top-0 left-0 h-screen bg-white shadow-md dark:bg-gray-800 dark:shadow-lg transform transition-all duration-300 ease-in-out 
+        className={`fixed z-50 top-0 left-0 h-screen bg-white shadow-md dark:bg-gray-950 dark:shadow-lg transform transition-all duration-300 ease-in-out 
           ${open ? "translate-x-0" : "-translate-x-full"} 
           w-64 md:relative md:translate-x-0 ${collapsed ? "md:w-20" : "md:w-64"}`}
       >
         <div
           className="p-4 border-b font-bold text-lg flex items-center justify-between
-          bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700
+          bg-white dark:bg-gray-950 border-gray-200 dark:border-gray-700
           text-gray-900 dark:text-gray-100"
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 ">
             <CalendarOutlined style={{ fontSize: "1.5rem" }} />
             {(!collapsed || open) && <span>Calendar</span>}
           </div>

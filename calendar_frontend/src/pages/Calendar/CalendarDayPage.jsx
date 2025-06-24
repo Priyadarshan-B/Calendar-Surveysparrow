@@ -1,19 +1,19 @@
 import { useSearchParams } from "react-router-dom";
 import dayjs from "dayjs";
-import Calendar from "../../components/calendar/calendar";
+import CalendarView from "../../components/calendar/CalendarCollapse";
 import CalendarSelect from "../../components/select/CustomSelect";
 
-export default function CalendarPage() {
+export default function CalendarDayPage() {
   const [searchParams] = useSearchParams();
   const dateParam = searchParams.get("date");
   const selectedDate = dateParam ? dayjs(dateParam) : dayjs();
 
   return (
-    <div className="h-full overflow-y-auto p-1">
+    <div className="h-full  p-4">
       <div className="flex items-center justify-between mb-4">
         <CalendarSelect />
       </div>
-      <Calendar selectedDate={selectedDate} />
+      <CalendarView currentDate={selectedDate} />
     </div>
   );
 }

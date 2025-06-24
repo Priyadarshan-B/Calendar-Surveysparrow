@@ -13,19 +13,19 @@ export default function CalendarGrid({ currentMonth, events }) {
     const day = startDay.add(i, "day");
     const dayEvents = events.filter((e) => dayjs(e.date).isSame(day, "day"));
 
+    const isCurrentMonth = day.month() === currentMonth.month();
+    const isToday = day.isToday();
+
     days.push(
       <div
         key={i}
-        className="border-gray-200 border p-2 rounded-md h-32 overflow-hidden"
+        className={`border p-2 rounded-md h-32 overflow-hidden transition 
+          ${isCurrentMonth ? "bg-white dark:bg-gray-900" : "bg-gray-100 dark:bg-gray-800 opacity-50"} 
+          border-gray-300 dark:border-gray-700`}
       >
         <div
-          className={`text-sm font-medium w-7 h-7 flex items-center justify-center 
-            ${
-              day.isToday()
-                ? "text-blue-500 bg-blue-100"
-                : "text-gray-800 bg-gray-100"
-            } 
-            rounded-full`}
+          className={`text-sm font-medium w-7 h-7 flex items-center justify-center rounded-full 
+            ${isToday ? "bg-blue-200 text-blue-600" : "text-gray-800 dark:text-gray-200"}`}
         >
           {day.date()}
         </div>
@@ -42,7 +42,7 @@ export default function CalendarGrid({ currentMonth, events }) {
         ))}
 
         {dayEvents.length > 2 && (
-          <div className="mt-1 text-xs text-blue-600 font-semibold float-end">
+          <div className="mt-1 text-xs text-blue-600 dark:text-blue-400 font-semibold text-right">
             +{dayEvents.length - 2} more
           </div>
         )}
@@ -53,11 +53,11 @@ export default function CalendarGrid({ currentMonth, events }) {
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return (
-    <div className="grid grid-cols-7 gap-2 bg-white dark:bg-gray-700">
+    <div className="grid grid-cols-7 gap-2 ">
       {weekdays.map((day) => (
         <div
           key={day}
-          className="text-center font-bold rounded-md bg-gray-100 py-2"
+          className="text-center font-bold rounded-md bg-gray-100 dark:bg-gray-800 py-2 text-gray-700 dark:text-gray-200"
         >
           {day}
         </div>

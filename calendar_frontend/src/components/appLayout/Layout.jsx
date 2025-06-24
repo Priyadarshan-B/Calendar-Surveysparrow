@@ -10,25 +10,21 @@ function AppLayout({ body }) {
   const toggleSidebarCollapsed = () => setSidebarCollapsed(!sidebarCollapsed);
 
   return (
-    <div className="h-screen flex bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 overflow-hidden">
-      {/* Sidebar - Remains fixed on the left */}
-      <SideBar
-        open={sidebarOpen}
+    <div className="h-screen w-screen box-border fixed overflow-hidden flex flex-col">
+      <TopBar
         toggleSidebar={toggleSidebar}
-        collapsed={sidebarCollapsed}
-        toggleCollapsed={toggleSidebarCollapsed}
+        toggleSidebarCollapsed={toggleSidebarCollapsed}
       />
 
-      {/* Main content area (TopBar + Body) */}
-      <div className="flex flex-col flex-1 overflow-hidden">
-        {/* TopBar - Stays at the top */}
-        <TopBar
+      <div className="flex flex-1 overflow-hidden">
+        <SideBar
+          open={sidebarOpen}
           toggleSidebar={toggleSidebar}
-          toggleSidebarCollapsed={toggleSidebarCollapsed}
+          collapsed={sidebarCollapsed}
+          toggleCollapsed={toggleSidebarCollapsed}
         />
 
-        {/* Main content body - Fills remaining space and scrolls if content overflows */}
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 bg-gray-100 dark:bg-gray-900 pb-10">
           {body}
         </main>
       </div>

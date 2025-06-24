@@ -12,7 +12,7 @@ function TopBar({ toggleSidebar, toggleSidebarCollapsed }) {
   return (
     <header
       className="flex justify-between items-center px-4 py-3 bg-white border-b border-gray-200 shadow-sm sticky top-0 z-30
-                       dark:bg-gray-800 dark:border-gray-700 dark:shadow-lg"
+                       dark:bg-gray-950 dark:border-gray-700 dark:shadow-lg"
     >
       <div className="flex items-center gap-4 w-full">
         <button
@@ -64,7 +64,7 @@ function TopBar({ toggleSidebar, toggleSidebarCollapsed }) {
             <span className="hidden md:block text-sm font-medium">
               {user.name}
             </span>
-            
+
           </button>
         </div>
       </div>
