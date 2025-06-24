@@ -7,10 +7,46 @@
     "title": "Daily Standup"
   },
   {
+    "date": "2025-06-24",
+    "startTime": "04:00",
+    "endTime": "07:30",
+    "color": "#f6501e",
+    "title": "Weekly catchUp"
+  },
+  {
     "date": "2025-06-23",
     "startTime": "04:00",
     "endTime": "07:30",
     "color": "#f6501e",
     "title": "Weekly catchUp"
+  },
+  {
+    "date": "2025-06-22",
+    "startTime": "04:00",
+    "endTime": "07:30",
+    "color": "#f6501e",
+    "title": "Weekly catchUp"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "04:00",
+    "endTime": "07:30",
+    "color": "#f6501e",
+    "title": "Weekly catchUp"
+  },
+  {
+    "date": "2025-06-21",
+    "startTime": "04:00",
+    "endTime": "07:30",
+    "color": "#f6501e",
+    "title": "Weekly catchUp"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "04:00",
+    "endTime": "07:30",
+    "color": "#f6501e",
+    "title": "Weekly catchUp "
   }
+  
 ]
