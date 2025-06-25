@@ -31,7 +31,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="text-gray-500 cursor-pointer hover:text-gray-700 dark:text-gray-300 dark:hover:text-white p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+      className="text-gray-500 cursor-pointer hover:text-gray-700 dark:text-gray-300 dark:hover:text-white p-2 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
       aria-label="Toggle dark mode"
     >
       {theme === 'light' ? (

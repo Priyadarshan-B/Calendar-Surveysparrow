@@ -5,12 +5,14 @@ import isBetween from "dayjs/plugin/isBetween";
 import isToday from "dayjs/plugin/isToday";
 import CustomPopup from "../popup/CustomPopup";
 import Timeline from "../timeline/TimeLine";
+
 dayjs.extend(isBetween);
 dayjs.extend(isToday);
 
-export default function WeekCalendar({eventsData=[]}) {
+export default function WeekCalendar({ eventsData = [] }) {
   const [currentWeek, setCurrentWeek] = useState(dayjs().startOf("week"));
   const [selectedDay, setSelectedDay] = useState(dayjs());
+  const [selectedEvents, setSelectedEvents] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const weekDays = useMemo(
@@ -20,15 +22,27 @@ export default function WeekCalendar({eventsData=[]}) {
 
   const events = useMemo(() => {
     return eventsData.filter((event) =>
-      dayjs(event.date).isBetween(currentWeek.startOf("week"), currentWeek.endOf("week"), null, "[]")
+      dayjs(event.date).isBetween(
+        currentWeek.startOf("week"),
+        currentWeek.endOf("week"),
+        null,
+        "[]"
+      )
     );
-  }, [currentWeek]);
+  }, [currentWeek, eventsData]);
 
   const getEventsForDay = (day) =>
     events.filter((e) => dayjs(e.date).isSame(day, "day"));
 
   const handleDayClick = (day) => {
     setSelectedDay(day);
+    setSelectedEvents(getEventsForDay(day));
+    setIsPopupOpen(true);
+  };
+
+  const handleEventClick = (event, day) => {
+    setSelectedDay(day);
+    setSelectedEvents([event]);
     setIsPopupOpen(true);
   };
 
@@ -36,7 +50,7 @@ export default function WeekCalendar({eventsData=[]}) {
   const goToNextWeek = () => setCurrentWeek((prev) => prev.add(1, "week"));
 
   return (
-    <div className="p-4 h-screen overflow-y-auto dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <div className="p-4  overflow-y-auto dark:bg-gray-900 text-gray-800 dark:text-gray-100">
       <div className="flex justify-between items-center mb-4">
         <button onClick={goToPrevWeek} className="p-2">
           <LeftOutlined />
@@ -49,13 +63,17 @@ export default function WeekCalendar({eventsData=[]}) {
         </button>
       </div>
 
-      <Timeline weekDays={weekDays} getEventsForDay={getEventsForDay} />
+      <Timeline
+        weekDays={weekDays}
+        getEventsForDay={getEventsForDay}
+        onEventClick={handleEventClick}
+      />
 
       <CustomPopup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
         day={selectedDay}
-        events={getEventsForDay(selectedDay)}
+        events={selectedEvents}
       />
     </div>
   );

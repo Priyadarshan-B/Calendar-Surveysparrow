@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import {
-  CalendarOutlined,
+  CalendarOutlined,ClockCircleOutlined
 } from "@ant-design/icons";
 
 const sidebarItems = [
-  { name: "Calendar", path: "/calendar", icon: CalendarOutlined },
+  { name: "Events", path: "/calendar", icon: ClockCircleOutlined },
 ];
 
 function SideBar({ open, toggleSidebar, collapsed, toggleCollapsed }) {
@@ -29,7 +29,7 @@ function SideBar({ open, toggleSidebar, collapsed, toggleCollapsed }) {
           bg-white dark:bg-gray-950 border-gray-200 dark:border-gray-700
           text-gray-900 dark:text-gray-100"
         >
-          <div className="flex items-center gap-2 ">
+          <div className="flex items-center w-full justify-center gap-2 ">
             <CalendarOutlined style={{ fontSize: "1.5rem" }} />
             {(!collapsed || open) && <span>Calendar</span>}
           </div>

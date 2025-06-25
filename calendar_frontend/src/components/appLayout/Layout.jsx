@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
+import UploadPopupWrapper from "../popup/uploadPopup";
 
 function AppLayout({ body }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -26,6 +27,7 @@ function AppLayout({ body }) {
 
         <main className="flex-1 bg-gray-100 dark:bg-gray-900 pb-10">
           {body}
+           <UploadPopupWrapper />
         </main>
       </div>
     </div>

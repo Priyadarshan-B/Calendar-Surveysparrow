@@ -20,7 +20,7 @@ export default function CalendarMain() {
   };
 
   return (
-    <div className="shadow-sm rounded-lg p-4">
+    <div className="shadow-sm rounded-lg p-4 pt-0">
       <CalendarHeader
         currentMonth={currentMonth}
         onPrev={handlePrev}

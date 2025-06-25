@@ -3,7 +3,7 @@ import CustomCalendar from "../datePicker/CustomCalendar";
 import { useMemo, useState } from "react";
 
 export default function CalendarView({ events }) {
-  const [selectedDate, setSelectedDate] = useState(dayjs()); 
+  const [selectedDate, setSelectedDate] = useState(dayjs());
   const [showPopup, setShowPopup] = useState(false);
 
   const updateDate = (date) => {
@@ -79,12 +79,10 @@ export default function CalendarView({ events }) {
 
   return (
     <div className="h-full overflow-y-auto flex rounded shadow bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 relative">
-      {/* Left side calendar */}
       <div className="hidden md:block p-4 dark:border-gray-700 overflow-y-auto">
         <CustomCalendar value={selectedDate} onChange={updateDate} />
       </div>
 
-      {/* Main content */}
       <div className="flex-1 flex flex-col overflow-y-auto">
         <div className="flex items-center justify-between px-4 py-2 dark:border-gray-700">
           <div className="md:hidden flex gap-2">
@@ -121,6 +119,27 @@ export default function CalendarView({ events }) {
                 style={{ top: `${index * 48}px` }}
               ></div>
             ))}
+            {selectedDate.isSame(dayjs(), "day") && (
+              <>
+                <div
+                  className="absolute left-0 right-0 w-full h-0.5 bg-blue-500 z-20"
+                  style={{
+                    top: `${
+                      dayjs().hour() * 48 + (dayjs().minute() / 60) * 48
+                    }px`,
+                  }}
+                />
+                <div
+                  className="absolute w-3 h-3 bg-blue-500 rounded-full z-30 border-2 border-white"
+                  style={{
+                    top: `${
+                      dayjs().hour() * 48 + (dayjs().minute() / 60) * 48 - 6
+                    }px`,
+                    right: "-0px",
+                  }}
+                />
+              </>
+            )}
 
             {processedDayEvents.map((event, i) => {
               const top = event.parsedStart * 48;

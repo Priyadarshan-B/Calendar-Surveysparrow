@@ -15,7 +15,7 @@ export default function CalendarHeader({ currentMonth, onPrev, onNext }) {
       </h2>
       <button
         onClick={onNext}
-        className="p-2 cursor-pointer dark:text-white "
+        className="p-2 pt-0 cursor-pointer dark:text-white "
         title="Next Month"
       >
         <RightOutlined />
