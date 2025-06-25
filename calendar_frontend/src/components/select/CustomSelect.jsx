@@ -1,27 +1,18 @@
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import dayjs from "dayjs";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function CalendarSelect() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchParams] = useSearchParams();
 
   const selected = location.pathname.includes("/day") ? "day" : "month";
-
-  const rawDate = searchParams.get("date");
-  const dateObj = dayjs(rawDate, ["YYYY-MM-DD", "YYYY-MM"], true).isValid()
-    ? dayjs(rawDate)
-    : dayjs();
 
   const handleChange = (e) => {
     const view = e.target.value;
 
     if (view === "month") {
-      const monthStr = dateObj.format("YYYY-MM"); 
-      navigate(`/calendar?date=${monthStr}`);
+      navigate("/calendar");
     } else {
-      const todayStr = dayjs().format("YYYY-MM-DD"); 
-      navigate(`/calendar/day?date=${todayStr}`);
+      navigate("/calendar/day");
     }
   };
 

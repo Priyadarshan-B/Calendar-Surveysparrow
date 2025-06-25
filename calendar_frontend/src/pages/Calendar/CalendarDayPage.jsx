@@ -1,17 +1,11 @@
-import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CalendarView from "../../components/calendar/CalendarCollapse";
 import CalendarSelect from "../../components/select/CustomSelect";
 import defaultEvents from "../../data/events.json";
 import dayjs from "dayjs";
 
-
 export default function CalendarDayPage() {
-  const [searchParams] = useSearchParams();
-  const dateParam = searchParams.get("date");
-  const selectedDate = dateParam ? dayjs(dateParam) : dayjs();
-
-
+  const [selectedDate] = useState(dayjs()); 
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
