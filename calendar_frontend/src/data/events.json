@@ -1,59 +1,149 @@
 [
   {
     "date": "2025-06-23",
-    "startTime": "00:00",
-    "endTime": "01:30",
-    "color": "#f6be23",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "color": "#1E88E5",
+    "title": "Morning Briefing"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "color": "#FF9800",
+    "title": "Sprint Review"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "10:30",
+    "endTime": "11:30",
+    "color": "#9C27B0",
+    "title": "Backend Sync"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "color": "#00ACC1",
+    "title": "API Walkthrough"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "15:00",
+    "endTime": "16:30",
+    "color": "#43A047",
+    "title": "Feature Planning"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#D32F2F",
+    "title": "Urgent Bug Fix"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "08:00",
+    "endTime": "09:00",
+    "color": "#03A9F4",
     "title": "Daily Standup"
   },
   {
     "date": "2025-06-24",
-    "startTime": "04:00",
-    "endTime": "07:30",
-    "color": "#f6501e",
-    "title": "Weekly catchUp"
+    "startTime": "09:00",
+    "endTime": "10:30",
+    "color": "#F06292",
+    "title": "UX Review"
   },
   {
-    "date": "2025-06-23",
-    "startTime": "04:00",
-    "endTime": "07:30",
-    "color": "#f6501e",
-    "title": "Weekly catchUp"
-  },
-   {
-    "date": "2025-06-23",
-    "startTime": "04:00",
-    "endTime": "05:30",
-    "color": "#f6be23",
-    "title": "Weekly catchUp"
+    "date": "2025-06-24",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "color": "#7B1FA2",
+    "title": "Tech Talk"
   },
   {
-    "date": "2025-06-22",
-    "startTime": "04:00",
-    "endTime": "07:30",
-    "color": "#f6501e",
-    "title": "Weekly catchUp"
+    "date": "2025-06-24",
+    "startTime": "13:00",
+    "endTime": "14:30",
+    "color": "#009688",
+    "title": "Design Feedback"
   },
   {
-    "date": "2025-06-23",
-    "startTime": "04:00",
-    "endTime": "07:30",
-    "color": "#f6501e",
-    "title": "Weekly catchUp"
+    "date": "2025-06-24",
+    "startTime": "14:00",
+    "endTime": "15:30",
+    "color": "#FF7043",
+    "title": "Cross-Team Sync"
   },
   {
-    "date": "2025-06-21",
-    "startTime": "04:00",
-    "endTime": "07:30",
-    "color": "#f6501e",
-    "title": "Weekly catchUp"
+    "date": "2025-06-24",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#5D4037",
+    "title": "Final Review"
   },
   {
-    "date": "2025-06-23",
-    "startTime": "04:00",
-    "endTime": "07:30",
-    "color": "#f6501e",
-    "title": "Weekly catchUp "
+    "date": "2025-06-25",
+    "startTime": "13:00",
+    "endTime": "14:30",
+    "color": "#009688",
+    "title": "Client Meeting"
+  },
+  {
+    "date": "2025-06-25",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "color": "#673AB7",
+    "title": "Deployment Check"
+  },
+  {
+    "date": "2025-06-26",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#795548",
+    "title": "Bug Triage"
+  },
+  {
+    "date": "2025-06-27",
+    "startTime": "11:00",
+    "endTime": "12:30",
+    "color": "#F44336",
+    "title": "Team Retrospective"
+  },
+  {
+    "date": "2025-06-28",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "color": "#00BCD4",
+    "title": "Marketing Sync"
+  },
+  {
+    "date": "2025-06-28",
+    "startTime": "09:00",
+    "endTime": "10:30",
+    "color": "#FFC107",
+    "title": "Sales Alignment"
+  },
+  {
+    "date": "2025-06-29",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "color": "#CDDC39",
+    "title": "Infrastructure Review"
+  },
+  {
+    "date": "2025-06-30",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "color": "#607D8B",
+    "title": "Wrap-up Meeting"
+  },
+  {
+    "date": "2025-06-30",
+    "startTime": "10:30",
+    "endTime": "11:30",
+    "color": "#8BC34A",
+    "title": "Support Handoff"
   }
-  
 ]

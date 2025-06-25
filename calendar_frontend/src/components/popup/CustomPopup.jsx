@@ -64,13 +64,13 @@ export default function CustomPopup({ isOpen, onClose, day, children }) {
 
   return (
     <div
-  className={`fixed inset-0  bg-opacity-100 flex items-center justify-center z-50 transition-opacity duration-300 ${
+  className={`fixed inset-0 m-2  bg-opacity-100 flex items-center justify-center z-50 transition-opacity duration-300 ${
     isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
   }`}
 >
   <div
     ref={popupRef}
-    className={`bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 rounded-lg shadow-lg w-96 max-w-full p-6 relative transform transition-transform duration-300 ${
+    className={`bg-white dark:bg-gray-950  text-gray-800 dark:text-gray-200 rounded-lg shadow-lg w-96 max-w-full p-6 relative transform transition-transform duration-300 ${
       isOpen ? "scale-100" : "scale-95"
     }`}
   >

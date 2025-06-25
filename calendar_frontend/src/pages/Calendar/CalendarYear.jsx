@@ -6,7 +6,7 @@ export default function CalendarYear() {
   const { events } = useEvents();
 
   return (
-    <div className="flex flex-col h-full p-4">
+    <div className="flex flex-col h-full  p-1 sm:p-4">
       <div className="flex float-left items-center justify-between mb-4">
         <CalendarSelect />
       </div>

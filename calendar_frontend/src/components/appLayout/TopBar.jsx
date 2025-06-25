@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ThemeToggle from "./toggleTheme";
-import profile from '../../assets/user.png'
+import profile from "../../assets/user.png";
 
 function TopBar({ toggleSidebar, toggleSidebarCollapsed }) {
   const [open, setOpen] = useState(false);
@@ -46,27 +46,16 @@ function TopBar({ toggleSidebar, toggleSidebarCollapsed }) {
         </button>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 mr-8">
         <div className="flex items-center gap-2 md:gap-4">
           <ThemeToggle />
         </div>
 
-        <div className="relative">
-          <button
-            onClick={() => setOpen(!open)}
-            className="flex items-center gap-2 text-gray-900 dark:text-gray-100"
-          >
-            <img
-              src={user.image}
-              alt="profile"
-              className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-600"
-            />
-            <span className="hidden md:block text-sm font-medium">
-              {user.name}
-            </span>
-
-          </button>
-        </div>
+        <img
+          src={user.image}
+          alt="profile"
+          className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-600"
+        />
       </div>
     </header>
   );

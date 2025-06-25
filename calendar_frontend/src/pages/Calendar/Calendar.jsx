@@ -5,7 +5,7 @@ export default function CalendarPage() {
 
 
   return (
-    <div className=" flex flex-col  p-4">
+    <div className=" flex flex-col  p-1 sm:p-4">
       <div className="flex float-left items-center justify-between mb-4">
         <CalendarSelect />
       </div>

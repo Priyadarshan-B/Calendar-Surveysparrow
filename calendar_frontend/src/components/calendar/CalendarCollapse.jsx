@@ -88,13 +88,13 @@ export default function CalendarView({ events }) {
           <div className="md:hidden flex gap-2">
             <button
               onClick={() => setShowPopup(true)}
-              className="bg-blue-600 text-white px-3 py-1 rounded text-sm"
+              className="bg-blue-600 text-white px-2 py-1 rounded text-sm"
             >
-              Show Calendar
+            Calendar
             </button>
           </div>
 
-          <span className="font-semibold text-gray-600 dark:text-gray-300">
+          <span className="font-semibold text-gray-600 text-sm dark:text-gray-300">
             {selectedDate.format("dddd, MMMM D, YYYY")}
           </span>
         </div>

@@ -76,29 +76,28 @@ export default function CalendarGrid({ currentMonth, events }) {
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return (
-  <>
-    <div className="grid grid-cols-7 gap-[1px] sm:gap-2 rounded-t-md bg-gray-100 dark:bg-gray-800 sticky top-0 z-10 mb-2">
-      {weekdays.map((day) => (
-        <div
-          key={day}
-          className="text-center font-bold py-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200"
-        >
-          {day}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-7 gap-[1px] sm:gap-2 rounded-t-md bg-gray-100 dark:bg-gray-800 sticky top-0 z-10 mb-2">
+        {weekdays.map((day) => (
+          <div
+            key={day}
+            className="text-center font-bold py-2 text-xs sm:text-sm text-gray-700 dark:text-gray-200"
+          >
+            {day}
+          </div>
+        ))}
+      </div>
 
-    <div className="grid grid-cols-7 gap-[1px] sm:gap-2 overflow-y-auto max-h-[calc(100vh-200px)] pb-10">
-      {days}
-    </div>
+      <div className="grid grid-cols-7 gap-[1px] sm:gap-2 overflow-y-auto max-h-[calc(100vh-200px)] pb-10">
+        {days}
+      </div>
 
-    {/* Popup */}
-    <CustomPopup
-      isOpen={popupOpen}
-      onClose={() => setPopupOpen(false)}
-      day={selectedDay}
-      events={selectedEvents}
-    />
-  </>
-);
+      <CustomPopup
+        isOpen={popupOpen}
+        onClose={() => setPopupOpen(false)}
+        day={selectedDay}
+        events={selectedEvents}
+      />
+    </>
+  );
 }
