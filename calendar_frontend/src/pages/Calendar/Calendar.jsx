@@ -7,6 +7,7 @@ import JsonUpload from "../../components/upload/JsonUpload";
 export default function CalendarPage() {
   const [searchParams] = useSearchParams();
   const dateParam = searchParams.get("date");
+  // const selectedDate = dayjs(currentDate);
 
   return (
     <div className="h-full flex flex-col gap-1 overflow-y-auto p-1">

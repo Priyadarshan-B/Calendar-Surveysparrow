@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 import CalendarView from "../../components/calendar/CalendarCollapse";
 import CalendarSelect from "../../components/select/CustomSelect";
 import defaultEvents from "../../data/events.json";
+import dayjs from "dayjs";
+
 
 export default function CalendarDayPage() {
   const [searchParams] = useSearchParams();
   const dateParam = searchParams.get("date");
+  const selectedDate = dateParam ? dayjs(dateParam) : dayjs();
+
 
   const [events, setEvents] = useState([]);
 
@@ -30,7 +34,7 @@ export default function CalendarDayPage() {
       <div className="flex float-left items-center justify-between mb-4">
         <CalendarSelect />
       </div>
-      <CalendarView events={events} />
+      <CalendarView currentDate={selectedDate} events={events} />
     </div>
   );
 }
