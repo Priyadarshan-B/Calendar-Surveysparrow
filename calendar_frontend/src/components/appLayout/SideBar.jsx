@@ -1,11 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import {
-  DashboardOutlined,
   CalendarOutlined,
 } from "@ant-design/icons";
 
 const sidebarItems = [
-  { name: "Dashboard", path: "/dashboard", icon: DashboardOutlined },
   { name: "Calendar", path: "/calendar", icon: CalendarOutlined },
 ];
 

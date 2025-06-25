@@ -1,24 +1,10 @@
 [
   {
-    "date": "2025-06-21",
+    "date": "2025-06-23",
     "startTime": "09:00",
-    "endTime": "10:30",
-    "color": "#4CAF50",
-    "title": "Code Review"
-  },
-  {
-    "date": "2025-06-21",
-    "startTime": "09:30",
-    "endTime": "11:00",
-    "color": "#E91E63",
-    "title": "Design Sync"
-  },
-  {
-    "date": "2025-06-22",
-    "startTime": "14:00",
-    "endTime": "16:00",
-    "color": "#3F51B5",
-    "title": "UI Planning"
+    "endTime": "10:00",
+    "color": "#1E88E5",
+    "title": "Morning Briefing"
   },
   {
     "date": "2025-06-23",
@@ -35,11 +21,67 @@
     "title": "Backend Sync"
   },
   {
+    "date": "2025-06-23",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "color": "#00ACC1",
+    "title": "API Walkthrough"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "15:00",
+    "endTime": "16:30",
+    "color": "#43A047",
+    "title": "Feature Planning"
+  },
+  {
+    "date": "2025-06-23",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#D32F2F",
+    "title": "Urgent Bug Fix"
+  },
+  {
     "date": "2025-06-24",
     "startTime": "08:00",
     "endTime": "09:00",
     "color": "#03A9F4",
     "title": "Daily Standup"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "09:00",
+    "endTime": "10:30",
+    "color": "#F06292",
+    "title": "UX Review"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "color": "#7B1FA2",
+    "title": "Tech Talk"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "13:00",
+    "endTime": "14:30",
+    "color": "#009688",
+    "title": "Design Feedback"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "14:00",
+    "endTime": "15:30",
+    "color": "#FF7043",
+    "title": "Cross-Team Sync"
+  },
+  {
+    "date": "2025-06-24",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#5D4037",
+    "title": "Final Review"
   },
   {
     "date": "2025-06-25",

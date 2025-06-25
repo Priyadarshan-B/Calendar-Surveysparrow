@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import CustomCalendar from "../datePicker/CustomCalendar";
 import { useMemo, useState } from "react";
-import "../appLayout/antdStyles.css";
 
 export default function CalendarView({ events }) {
   const [selectedDate, setSelectedDate] = useState(dayjs()); 
