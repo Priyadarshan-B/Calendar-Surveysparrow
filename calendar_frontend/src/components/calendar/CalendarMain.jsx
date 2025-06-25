@@ -1,4 +1,3 @@
-import { useSearchParams } from "react-router-dom";
 import dayjs from "dayjs";
 import { useState } from "react";
 import CalendarHeader from "./CalendarHeader";
@@ -7,29 +6,21 @@ import defaultEvents from "../../data/events.json";
 import { useEvents } from "../utils/contexts/EventContext";
 
 export default function CalendarMain() {
-    const { events } = useEvents();
-    const Events = events || defaultEvents;
-  const [searchParams, setSearchParams] = useSearchParams();
-  const initial = searchParams.get("date")
-    ? dayjs(searchParams.get("date") + "-01")
-    : dayjs();
+  const { events } = useEvents();
+  const Events = events || defaultEvents;
 
-  const [currentMonth, setCurrentMonth] = useState(initial);
+  const [currentMonth, setCurrentMonth] = useState(dayjs().startOf("month"));
 
   const handlePrev = () => {
-    const prevMonth = currentMonth.subtract(1, "month");
-    setCurrentMonth(prevMonth);
-    setSearchParams({ date: prevMonth.format("YYYY-MM") });
+    setCurrentMonth((prev) => prev.subtract(1, "month"));
   };
 
   const handleNext = () => {
-    const nextMonth = currentMonth.add(1, "month");
-    setCurrentMonth(nextMonth);
-    setSearchParams({ date: nextMonth.format("YYYY-MM") });
+    setCurrentMonth((prev) => prev.add(1, "month"));
   };
 
   return (
-    <div className=" shadow-sm rounded-lg p-4">
+    <div className="shadow-sm rounded-lg p-4">
       <CalendarHeader
         currentMonth={currentMonth}
         onPrev={handlePrev}

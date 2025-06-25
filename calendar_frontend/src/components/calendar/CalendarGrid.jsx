@@ -1,11 +1,15 @@
 import React, {useState} from "react";
 import dayjs from "dayjs";
-import weekday from "dayjs/plugin/weekday";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import isToday from "dayjs/plugin/isToday";
+import weekday from "dayjs/plugin/weekday";
+import localeData from "dayjs/plugin/localeData";
 import CustomPopup from "../popup/CustomPopup";
 
-dayjs.extend(weekday);
+dayjs.extend(localizedFormat);
 dayjs.extend(isToday);
+dayjs.extend(weekday);
+dayjs.extend(localeData); 
 
 export default function CalendarGrid({ currentMonth, events }) {
   const [popupOpen, setPopupOpen] = useState(false);

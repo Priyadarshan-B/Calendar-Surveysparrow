@@ -1,18 +1,14 @@
 import dayjs from "dayjs";
 import CustomCalendar from "../datePicker/CustomCalendar";
 import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import "../appLayout/antdStyles.css";
 
-export default function CalendarView({events}) {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const dateParam = searchParams.get("date");
-  const selectedDate = dateParam ? dayjs(dateParam) : dayjs();
-
+export default function CalendarView({ events }) {
+  const [selectedDate, setSelectedDate] = useState(dayjs()); 
   const [showPopup, setShowPopup] = useState(false);
 
-  const updateDateParam = (date) => {
-    setSearchParams({ date: date.format("YYYY-MM-DD") });
+  const updateDate = (date) => {
+    setSelectedDate(date);
     setShowPopup(false);
   };
 
@@ -80,20 +76,18 @@ export default function CalendarView({events}) {
     });
 
     return finalEvents;
-  }, [selectedDate]);
-
-  const EVENT_HORIZONTAL_GAP_PX = 4;
+  }, [selectedDate, events]);
 
   return (
-    <div className="h-full overflow-y-auto flex  rounded shadow bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 relative">
-      <div className="hidden md:block p-4  dark:border-gray-700 overflow-y-auto">
-        <div>
-          <CustomCalendar value={selectedDate} onChange={updateDateParam} />
-        </div>
+    <div className="h-full overflow-y-auto flex rounded shadow bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 relative">
+      {/* Left side calendar */}
+      <div className="hidden md:block p-4 dark:border-gray-700 overflow-y-auto">
+        <CustomCalendar value={selectedDate} onChange={updateDate} />
       </div>
 
+      {/* Main content */}
       <div className="flex-1 flex flex-col overflow-y-auto">
-        <div className="flex items-center justify-between px-4 py-2  dark:border-gray-700">
+        <div className="flex items-center justify-between px-4 py-2 dark:border-gray-700">
           <div className="md:hidden flex gap-2">
             <button
               onClick={() => setShowPopup(true)}
@@ -120,7 +114,7 @@ export default function CalendarView({events}) {
             ))}
           </div>
 
-          <div className="flex-1 rounded relative  dark:border-gray-700">
+          <div className="flex-1 rounded relative dark:border-gray-700">
             {hours.map((hour, index) => (
               <div
                 key={hour}
@@ -132,7 +126,6 @@ export default function CalendarView({events}) {
             {processedDayEvents.map((event, i) => {
               const top = event.parsedStart * 48;
               const height = (event.parsedEnd - event.parsedStart) * 48;
-
               const GAP_PX = 2;
               const totalColumns = event.totalColumns || 1;
               const gapTotal = GAP_PX * (totalColumns - 1);
@@ -176,7 +169,7 @@ export default function CalendarView({events}) {
             >
               ✕
             </button>
-            <CustomCalendar value={selectedDate} onChange={updateDateParam} />
+            <CustomCalendar value={selectedDate} onChange={updateDate} />
           </div>
         </div>
       )}
