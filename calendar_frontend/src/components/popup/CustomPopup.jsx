@@ -14,7 +14,7 @@ export default function CustomPopup({ isOpen, onClose, day, children }) {
   const handleEventFormSuccess = useCallback(
     (newEvent) => {
       addEvent(newEvent);
-      showSuccess("Event added successfully!");
+      // showSuccess("Event added successfully!");
       setShowAddForm(false);
     },
     [addEvent]
